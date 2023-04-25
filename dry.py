@@ -1,10 +1,12 @@
 import pandas as pd
 
 def df_sort(df, feature):
+    '''
+    排序df
+    '''
     features = [i for i in range(len(df))]
     df[feature] = features
-    df['money'] = [i for i in range(len(df))]
-    return df.sort_values('age', ascending=True)
+    return df.sort_values(feature, ascending=True)
 
 # 创建一个 DataFrame
 df = pd.DataFrame({
