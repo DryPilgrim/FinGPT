@@ -1,7 +1,9 @@
 import pandas as pd
 
-def df_sort(df):
-    return df.sort_values('grade', ascending=True)
+def df_sort(df, feature):
+    features = [i for i in range(len(df))]
+    df[feature] = features
+    return df.sort_values(feature, ascending=True)
 
 # 创建一个 DataFrame
 df = pd.DataFrame({
@@ -10,4 +12,4 @@ df = pd.DataFrame({
     'grade': [80, 90, 85]
 })
 
-print(df_sort(df))
+print(df_sort(df, 'ok'))
